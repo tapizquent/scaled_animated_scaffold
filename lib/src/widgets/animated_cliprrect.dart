@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class AnimatedClipRRect extends StatelessWidget {
+  /// Custom ClipRRect that animates it border radius
   const AnimatedClipRRect({
     @required this.duration,
     this.curve = Curves.linear,

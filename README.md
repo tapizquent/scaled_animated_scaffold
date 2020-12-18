@@ -61,7 +61,14 @@ Widget build(BuildContext context) {
 }
 ```
 
+The menu can be reveled by tapping in the `ScaledAnimatedScaffoldAppBar`'s menu icon or by swipping from the left of the screen, just as you would with
+a `Drawer`
+
+
 Using the `ScaledAnimatedScaffoldMenuButton` is not at all required but it nicely aligns the button content to the left, whereas other buttons such as `FlatButton` center the content, but you are free to use any widget you desire
+
+
+Since this is a special type of Scaffold, no `Drawer` can be specified as it would conflict with the revealing of the menu
 
 
 `ScaledAnimatedScaffold` contains many other properties that can be customized such as:
@@ -73,4 +80,4 @@ Using the `ScaledAnimatedScaffoldMenuButton` is not at all required but it nicel
 
 ### AppBar
 
-Since the opening and closing on the menu is handled internally, a regular material `AppBar` will not work for the `ScaledAnimatedScaffold`. Instead, you can use the adjusted `ScaledAnimatedScaffoldAppBar` which behaves very similarly to the regular `AppBar` but with minor restrictions such as, the leading widget can't be assigned but you can easily change the menu icon by specifying the `leadingIcon` property. Most other properties are kept intact and can be used the same way as the regular AppBar
+Since the opening and closing on the menu is handled internally, a regular material `AppBar` will not work for the `ScaledAnimatedScaffold`. Instead, you can use the adjusted `ScaledAnimatedScaffoldAppBar` which behaves very similarly to the regular `AppBar` but with minor restrictions such as, the leading widget can't be assigned but you can easily change the menu icon by specifying the `leadingIcon` property. Most other properties are kept intact and can be used the same way as the regular `AppBar`

@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ScaledAnimatedScaffoldMenu extends StatefulWidget {
+  /// The menu for [ScaledAnimatedScaffold]
+  ///
+  /// Since opening and closing of menu is handled internally by the
+  /// [ScaledAnimatedScaffold], the properties included in here can be
+  /// adjusted by using the [ScaledAnimatedScaffoldMenuConfiguration]
+  ///
+  /// This class should not be used directly as it will break the open menu
+  /// handle
   const ScaledAnimatedScaffoldMenu({
     Key key,
     @required this.animationDuration,

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScaledAnimatedScaffoldMenuButton extends StatelessWidget {
-  final Widget icon;
-  final Widget label;
-  final void Function() onPressed;
-
+  /// A custom button that aligns its content to the left, whereas
+  /// other buttons such as [FlatButton] centers its content
   const ScaledAnimatedScaffoldMenuButton({
     Key key,
     this.icon,
@@ -12,6 +10,10 @@ class ScaledAnimatedScaffoldMenuButton extends StatelessWidget {
     @required this.onPressed,
   })  : assert(label != null),
         super(key: key);
+
+  final Widget icon;
+  final Widget label;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
