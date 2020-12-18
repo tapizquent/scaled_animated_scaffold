@@ -1,16 +1,7 @@
-# example
+# Scaled Animated Scaffold Example
 
-A new Flutter project.
+A Scaffold-like Widget that animates and reveals a menu.
 
-## Getting Started
+![Image](https://raw.githubusercontent.com/tapizquent/scaled_animated_scaffold/assets/package_showcase.gif)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This example showcases how the `ScaledAnimatedScaffold` works and how to use the different customizations that come with it.
