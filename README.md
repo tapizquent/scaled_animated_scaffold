@@ -18,7 +18,7 @@ Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  scaled_animated_scaffold: ^0.0.2
+  scaled_animated_scaffold: ^0.0.4
 ```
 
 Then import it to your project:

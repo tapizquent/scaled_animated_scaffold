@@ -1,3 +1,7 @@
+## [0.0.4]
+
+* Fixed readme and example pubspec
+
 ## [0.0.3]
 
 * Added better package description. Updated logic to remove empty spaces when header and footer for menu are not provided
