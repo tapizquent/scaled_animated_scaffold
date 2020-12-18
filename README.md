@@ -2,7 +2,7 @@
 
 [![Pub Package](https://img.shields.io/pub/v/scaled_animated_scaffold.svg?style=flat-square)](https://pub.dartlang.org/packages/scaled_animated_scaffold)
 
-A Scaffold-like Widget that animates and reveals a menu.
+A customized Scaffold widget that animates and scales down its content revealing a fully-customizable menu while keeping other functionality developers are used to intact.
 
 ![Image](https://raw.githubusercontent.com/tapizquent/scaled_animated_scaffold/assets/package_showcase.gif)
 

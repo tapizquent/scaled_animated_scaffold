@@ -51,19 +51,20 @@ class ScaledAnimatedScaffoldMenuState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 12,
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: SingleChildScrollView(
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: widget.header,
+              if (widget.header != null)
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 12,
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: SingleChildScrollView(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: widget.header,
+                      ),
                     ),
                   ),
                 ),
-              ),
               Expanded(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width / 2,
@@ -74,19 +75,20 @@ class ScaledAnimatedScaffoldMenuState
                   ),
                 ),
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 12,
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: SingleChildScrollView(
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: widget.footer,
+              if (widget.footer != null)
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 12,
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SingleChildScrollView(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: widget.footer,
+                      ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         ),
