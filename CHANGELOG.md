@@ -1,3 +1,7 @@
+## [0.0.3]
+
+* Added better package description. Updated logic to remove empty spaces when header and footer for menu are not provided
+
 ## [0.0.2]
 
 * Revamped example. Fixed typo in readme
