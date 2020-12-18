@@ -18,7 +18,7 @@ Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  scaled_animated_scaffold: ^0.0.1
+  scaled_animated_scaffold: ^0.0.2
 ```
 
 Then import it to your project:
@@ -59,7 +59,7 @@ Widget build(BuildContext context) {
       ),
     ),
     body: Center(
-      child: Text('Hello World),
+      child: Text('Hello World'),
     ),
   );
 }
@@ -85,3 +85,16 @@ Since this is a special type of Scaffold, no `Drawer` can be specified as it wou
 ### AppBar
 
 Since the opening and closing on the menu is handled internally, a regular material `AppBar` will not work for the `ScaledAnimatedScaffold`. Instead, you can use the adjusted `ScaledAnimatedScaffoldAppBar` which behaves very similarly to the regular `AppBar` but with minor restrictions such as, the leading widget can't be assigned but you can easily change the menu icon by specifying the `leadingIcon` property. Most other properties are kept intact and can be used the same way as the regular `AppBar`
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return ScaledAnimatedScaffold(
+      appBar: ScaledAnimatedScaffoldAppBar(
+        brightness: Brightness.light,
+        title: Text('Scaled Scaffold'),
+      ),
+      body: ...
+    );
+  }
+```
