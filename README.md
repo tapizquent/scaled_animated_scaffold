@@ -1,12 +1,16 @@
 # Scaled Animated Scaffold
 
+[![Pub Package](https://img.shields.io/pub/v/scaled_animated_scaffold.svg?style=flat-square)](https://pub.dartlang.org/packages/scaled_animated_scaffold)
+
 A Scaffold-like Widget that animates and reveals a menu.
 
 ![Image](https://raw.githubusercontent.com/tapizquent/scaled_animated_scaffold/assets/package_showcase.gif)
 
 ## Usage
 
-Make sure to check out [example project](https://github.com/tapizquent/scaled_animated_scaffold/blob/master/example). 
+Make sure to check out [example project](https://github.com/tapizquent/scaled_animated_scaffold/blob/master/example).
+
+For additional info please refer to [API docs](https://pub.dartlang.org/documentation/scaled_animated_scaffold/latest/scaled_animated_scaffold/scaled_animated_scaffold-library.html).
 
 ### Installation
 
