@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:scaled_animated_scaffold/scaled_animated_scaffold.dart';
 
+/// AppBar for [ScaledAnimatedScaffold].
+///
+/// Behaves very similar to a normal material [AppBar] with a few exceptions
+///
+/// The leading widget for this [ScaledAnimatedScaffoldAppBar] can't be provided
+/// as the opening of the menu is handled internally. You can, however, change
+/// the [Icon] you wish to have in the leading widget by specifying the [leadingIcon].
 class ScaledAnimatedScaffoldAppBar extends StatelessWidget
     with PreferredSizeWidget {
-  /// AppBar for [ScaledAnimatedScaffold].
-  ///
-  /// Behaves very similar to a normal material [AppBar] with a few exceptions
-  ///
-  /// The leading widget for this [ScaledAnimatedScaffoldAppBar] can't be provided
-  /// as the opening of the menu is handled internally. You can, however, change
-  /// the [Icon] you wish to have in the leading widget by specifying the [leadingIcon].
+  /// Creates an AppBar for [ScaledAnimatedScaffold].
   const ScaledAnimatedScaffoldAppBar({
     Key key,
     this.title,

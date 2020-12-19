@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// A custom button that aligns its content to the left, whereas
+/// other buttons such as [FlatButton] centers its content
 class ScaledAnimatedScaffoldMenuButton extends StatelessWidget {
-  /// A custom button that aligns its content to the left, whereas
+  /// Creates a custom button that aligns its content to the left, whereas
   /// other buttons such as [FlatButton] centers its content
   const ScaledAnimatedScaffoldMenuButton({
     Key key,

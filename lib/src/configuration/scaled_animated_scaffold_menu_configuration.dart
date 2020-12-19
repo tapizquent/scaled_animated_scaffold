@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// The configuration for the [ScaledAnimatedScaffoldMenu]
+///
+/// This class is in charged of providing all content and styling
+/// for the menu.
 class ScaledAnimatedScaffoldMenuConfiguration {
-  /// The configuration for the [ScaledAnimatedScaffoldMenu]
-  ///
-  /// This class is in charged of providing all content and styling
-  /// for the menu.
-  ///
+  /// Creates the configuration for the [ScaledAnimatedScaffoldMenu]
   const ScaledAnimatedScaffoldMenuConfiguration({
     this.header,
     this.footer,

@@ -357,7 +357,7 @@ class ScaledAnimatedScaffoldState extends State<ScaledAnimatedScaffold>
                         toggleMenu();
                       },
                       child: Container(
-                        width: !_isMenuVisible ? 15 : constraints.maxWidth,
+                        width: !_isMenuVisible ? 20 : constraints.maxWidth,
                         color: Colors.transparent,
                       ),
                     )
