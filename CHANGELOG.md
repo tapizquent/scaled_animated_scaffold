@@ -1,3 +1,7 @@
+## [0.0.5]
+
+* Added documentation to appear in DocsAPI and updated size of gesture detector to make an easier opening of menu
+
 ## [0.0.4]
 
 * Fixed readme and example pubspec

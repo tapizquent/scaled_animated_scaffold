@@ -1,6 +1,6 @@
 name: scaled_animated_scaffold
 description: A customized Scaffold widget that animates and scales down its content revealing a fully-customizable menu while keeping other functionality developers are used to intact.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/tapizquent/scaled_animated_scaffold
 
 environment:
