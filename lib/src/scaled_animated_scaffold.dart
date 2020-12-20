@@ -303,64 +303,71 @@ class ScaledAnimatedScaffoldState extends State<ScaledAnimatedScaffold>
                 duration: widget.animationDuration,
                 child: Stack(
                   children: [
-                    AbsorbPointer(
-                      absorbing: _isMenuVisible,
-                      child: ScaleTransition(
-                        scale: _scaleAnimationController,
-                        child: AnimatedContainer(
-                          duration: widget.animationDuration,
-                          decoration: BoxDecoration(
-                            borderRadius: _isMenuVisible
-                                ? widget.borderRadius
-                                : BorderRadius.zero,
-                            boxShadow: [
-                              if (widget.showShadow)
-                                BoxShadow(
-                                  blurRadius: 12,
-                                  color: widget.shadowColor,
-                                  offset: Offset(0, 4),
+                    ScaleTransition(
+                      scale: _scaleAnimationController,
+                      child: Stack(
+                        children: [
+                          AbsorbPointer(
+                            absorbing: _isMenuVisible,
+                            child: AnimatedContainer(
+                              duration: widget.animationDuration,
+                              decoration: BoxDecoration(
+                                borderRadius: _isMenuVisible
+                                    ? widget.borderRadius
+                                    : BorderRadius.zero,
+                                boxShadow: [
+                                  if (widget.showShadow)
+                                    BoxShadow(
+                                      blurRadius: 12,
+                                      color: widget.shadowColor,
+                                      offset: Offset(0, 4),
+                                    ),
+                                ],
+                              ),
+                              child: AnimatedClipRRect(
+                                borderRadius: _isMenuVisible
+                                    ? widget.borderRadius
+                                    : BorderRadius.zero,
+                                duration: widget.animationDuration,
+                                child: Scaffold(
+                                  key: _scaffoldKey,
+                                  appBar: widget.appBar,
+                                  body: widget.body,
+                                  floatingActionButton:
+                                      widget.floatingActionButton,
+                                  floatingActionButtonLocation:
+                                      widget.floatingActionButtonLocation,
+                                  floatingActionButtonAnimator:
+                                      widget.floatingActionButtonAnimator,
+                                  persistentFooterButtons:
+                                      widget.persistentFooterButtons,
+                                  bottomNavigationBar:
+                                      widget.bottomNavigationBar,
+                                  bottomSheet: widget.bottomSheet,
+                                  backgroundColor: widget.backgroundColor,
+                                  resizeToAvoidBottomInset:
+                                      widget.resizeToAvoidBottomInset,
+                                  primary: widget.primary,
+                                  extendBody: widget.extendBody,
+                                  extendBodyBehindAppBar:
+                                      widget.extendBodyBehindAppBar,
                                 ),
-                            ],
-                          ),
-                          child: AnimatedClipRRect(
-                            borderRadius: _isMenuVisible
-                                ? widget.borderRadius
-                                : BorderRadius.zero,
-                            duration: widget.animationDuration,
-                            child: Scaffold(
-                              key: _scaffoldKey,
-                              appBar: widget.appBar,
-                              body: widget.body,
-                              floatingActionButton: widget.floatingActionButton,
-                              floatingActionButtonLocation:
-                                  widget.floatingActionButtonLocation,
-                              floatingActionButtonAnimator:
-                                  widget.floatingActionButtonAnimator,
-                              persistentFooterButtons:
-                                  widget.persistentFooterButtons,
-                              bottomNavigationBar: widget.bottomNavigationBar,
-                              bottomSheet: widget.bottomSheet,
-                              backgroundColor: widget.backgroundColor,
-                              resizeToAvoidBottomInset:
-                                  widget.resizeToAvoidBottomInset,
-                              primary: widget.primary,
-                              extendBody: widget.extendBody,
-                              extendBodyBehindAppBar:
-                                  widget.extendBodyBehindAppBar,
+                              ),
                             ),
                           ),
-                        ),
+                          GestureDetector(
+                            onHorizontalDragStart: (_) {
+                              toggleMenu();
+                            },
+                            child: Container(
+                              width:
+                                  !_isMenuVisible ? 20 : constraints.maxWidth,
+                              color: Colors.transparent,
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                    GestureDetector(
-                      onHorizontalDragStart: (_) {
-                        toggleMenu();
-                      },
-                      child: Container(
-                        width: !_isMenuVisible ? 20 : constraints.maxWidth,
-                        color: Colors.transparent,
-                      ),
-                    )
                   ],
                 ),
               ),
