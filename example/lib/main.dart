@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
     );
   }
 }
@@ -37,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return ScaledAnimatedScaffold(
       appBar: ScaledAnimatedScaffoldAppBar(
-        brightness: Brightness.light,
+        brightness: Theme.of(context).brightness,
         title: Text(widget.title),
       ),
       menuConfiguration: ScaledAnimatedScaffoldMenuConfiguration(

@@ -301,12 +301,12 @@ class ScaledAnimatedScaffoldState extends State<ScaledAnimatedScaffold>
                 bottom: 0,
                 left: offset,
                 duration: widget.animationDuration,
-                child: Stack(
-                  children: [
-                    AbsorbPointer(
-                      absorbing: _isMenuVisible,
-                      child: ScaleTransition(
-                        scale: _scaleAnimationController,
+                child: ScaleTransition(
+                  scale: _scaleAnimationController,
+                  child: Stack(
+                    children: [
+                      AbsorbPointer(
+                        absorbing: _isMenuVisible,
                         child: AnimatedContainer(
                           duration: widget.animationDuration,
                           decoration: BoxDecoration(
@@ -351,17 +351,17 @@ class ScaledAnimatedScaffoldState extends State<ScaledAnimatedScaffold>
                           ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      onHorizontalDragStart: (_) {
-                        toggleMenu();
-                      },
-                      child: Container(
-                        width: !_isMenuVisible ? 20 : constraints.maxWidth,
-                        color: Colors.transparent,
-                      ),
-                    )
-                  ],
+                      GestureDetector(
+                        onHorizontalDragStart: (_) {
+                          toggleMenu();
+                        },
+                        child: Container(
+                          width: !_isMenuVisible ? 20 : constraints.maxWidth,
+                          color: Colors.transparent,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

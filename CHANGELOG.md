@@ -1,3 +1,7 @@
+## [0.0.6]
+
+* Fixed issue where GestureDetector was accessible outside of Scaffold
+
 ## [0.0.5]
 
 * Added documentation to appear in DocsAPI and updated size of gesture detector to make an easier opening of menu
