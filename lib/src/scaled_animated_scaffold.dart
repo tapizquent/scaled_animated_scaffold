@@ -23,12 +23,16 @@ class ScaledAnimatedScaffold extends StatefulWidget {
     this.bottomSheet,
     this.backgroundColor,
     this.resizeToAvoidBottomInset,
+    this.layerColor,
     this.primary = true,
     this.extendBody = false,
     this.extendBodyBehindAppBar = false,
     this.borderRadius = const BorderRadius.all(Radius.circular(30)),
-    this.showShadow = true,
+    this.showShadow = false,
     this.shadowColor = const Color(0x8A000000),
+    this.layerTopOffset = 30,
+    this.layerRightOffset = 0.3,
+    this.layerBottomOffset = -15,
   })  : assert(primary != null),
         assert(extendBody != null),
         assert(extendBodyBehindAppBar != null),
@@ -206,6 +210,19 @@ class ScaledAnimatedScaffold extends StatefulWidget {
   /// Color of the shadow behind Scaffold when menu is visible
   final Color shadowColor;
 
+  // TODO: My Added attr for layer
+  /// Color of the layer behind the [body] widget
+  final Color layerColor;
+
+  /// Distance of layer from the top of the [body] widget
+  final double layerTopOffset;
+
+  /// Distance of layer from the right of the [body] widget as percentage
+  final double layerRightOffset;
+
+  /// Distance of layer from the bottom of the [body] widget, (negative number)
+  final double layerBottomOffset;
+
   @override
   ScaledAnimatedScaffoldState createState() => ScaledAnimatedScaffoldState();
 
@@ -288,12 +305,46 @@ class ScaledAnimatedScaffoldState extends State<ScaledAnimatedScaffold>
               Theme.of(context).canvasColor,
           child: Stack(
             children: [
-              ScaledAnimatedScaffoldMenu(
-                key: _scaffoldMenuKey,
-                animationDuration: widget.animationDuration,
-                header: widget.menuConfiguration.header,
-                content: widget.menuConfiguration.content,
-                footer: widget.menuConfiguration.footer,
+              AnimatedPositioned(
+                key: UniqueKey(),
+                top: 0,
+                right: 0,
+                left: 0,
+                duration: widget.animationDuration,
+                child: ScaledAnimatedScaffoldMenu(
+                  key: _scaffoldMenuKey,
+                  animationDuration: widget.animationDuration,
+                  header: widget.menuConfiguration.header,
+                  content: widget.menuConfiguration.content,
+                  footer: widget.menuConfiguration.footer,
+                ),
+              ),
+              AnimatedPositioned(
+                key: UniqueKey(),
+                top: widget.layerTopOffset,
+                right: -offset + constraints.maxWidth * widget.layerRightOffset,
+                bottom: widget.layerBottomOffset,
+                left: offset,
+                duration: widget.animationDuration,
+                child: ScaleTransition(
+                  scale: _scaleAnimationController,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: widget.layerColor,
+                      borderRadius: _isMenuVisible
+                          ? widget.borderRadius
+                          : BorderRadius.zero,
+                      boxShadow: [
+                        if (widget.showShadow)
+                          BoxShadow(
+                            blurRadius: 12,
+                            color: widget.shadowColor,
+                            offset: Offset(0, 4),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
               AnimatedPositioned(
                 top: 0,
@@ -313,14 +364,6 @@ class ScaledAnimatedScaffoldState extends State<ScaledAnimatedScaffold>
                             borderRadius: _isMenuVisible
                                 ? widget.borderRadius
                                 : BorderRadius.zero,
-                            boxShadow: [
-                              if (widget.showShadow)
-                                BoxShadow(
-                                  blurRadius: 12,
-                                  color: widget.shadowColor,
-                                  offset: Offset(0, 4),
-                                ),
-                            ],
                           ),
                           child: AnimatedClipRRect(
                             borderRadius: _isMenuVisible

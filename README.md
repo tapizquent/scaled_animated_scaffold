@@ -8,6 +8,56 @@ A customized Scaffold widget that animates and scales down its content revealing
 
 ## Usage
 
+#### With added body layer
+### [Inspiration (behance)](https://www.behance.net/gallery/107238071/Food-Delivery-App-UI-Kit)
+![behance design](demo/behance_design.jpg)
+
+### using the library
+![plugin example](demo/demo1.png)
+![plugin example](demo/demo-2.png)
+
+### Example
+```dart
+@override
+Widget build(BuildContext context) {
+  return ScaledAnimatedScaffold(
+    // Add your layerColor of choice
+    layerColor: Theme.of(context).primaryColor.withOpacity(0.7),
+    // optional parameters to alter layer constraints
+    layerTopOffset: 30,
+    layerRightOffset: 0.3,
+    layerBottomOffset: -15,
+    menuConfiguration: ScaledAnimatedScaffoldMenuConfiguration(
+      header: ScaledAnimatedScaffoldMenuButton(
+        icon: Icon(
+          Icons.account_circle,
+        ),
+        label: Text('John Wilkins'),
+        onPressed: () {},
+      ),
+      content: Column(
+        children: [
+          ScaledAnimatedScaffoldMenuButton(
+            icon: Icon(Icons.star),
+            label: Text('Favorites'),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      footer: ScaledAnimatedScaffoldMenuButton(
+        icon: Icon(
+          Icons.settings,
+        ),
+        label: Text('Settings'),
+        onPressed: () {},
+      ),
+    ),
+    body: Center(
+      child: Text('Hello World'),
+    ),
+  );
+}
+```
 Make sure to check out [example project](https://github.com/tapizquent/scaled_animated_scaffold/blob/master/example).
 
 For additional info please refer to [API docs](https://pub.dartlang.org/documentation/scaled_animated_scaffold/latest/scaled_animated_scaffold/scaled_animated_scaffold-library.html).
